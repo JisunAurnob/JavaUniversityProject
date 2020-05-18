@@ -30,6 +30,8 @@ public class HomePage extends JFrame {
     public static Color ambientPurple = new Color(54, 2, 68);
     public static Color lightPurple = new Color(117, 69, 130);
     public static Color lightBrown = new Color(194, 189, 170);
+    
+    ImageIcon mainImage = new ImageIcon(HomePage.class.getResource("/resources/mainLogo.png"));
 
 	private JPanel contentPane;
 	private JTextField username;
@@ -60,6 +62,7 @@ public class HomePage extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 414, 666);
 		setBackground(background);
+		setIconImage(mainImage.getImage());
 		setUndecorated(true);
 		contentPane = new JPanel();
 		contentPane.setBounds(new Rectangle(0, 0, 414, 667));
@@ -103,8 +106,14 @@ public class HomePage extends JFrame {
 		username.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				if(username.getText() == "username/email") {
+				if(username.getText().equals("username/email")) {
 					username.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(username.getText().trim().equals("")) {
+					username.setText("username/email");
 				}
 			}
 		});
@@ -122,6 +131,20 @@ public class HomePage extends JFrame {
 		contentPane.add(password_Container);
 		
 		password = new JTextField();
+		password.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(password.getText().equals("password")) {
+					password.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(password.getText().trim().equals("")) {
+					password.setText("password");
+				}
+			}
+		});
 		password.setText("password");
 		password.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		password.setColumns(10);

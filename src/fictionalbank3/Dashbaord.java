@@ -159,29 +159,49 @@ public class Dashbaord extends JFrame {
 		TransectionCriteriaHeading.setBounds(12, 7, 288, 17);
 		TransectionCriteriaHolder.add(TransectionCriteriaHeading);
 		
-		JLabel trConditionOne = new JLabel("- Minimum balance -100000tk");
+		JLabel trConditionOne = new JLabel("");
 		trConditionOne.setForeground(Color.WHITE);
 		trConditionOne.setFont(new Font("Segoe UI", Font.PLAIN, 10));
 		trConditionOne.setBounds(12, 28, 288, 17);
 		TransectionCriteriaHolder.add(trConditionOne);
 		
-		JLabel trConditionTwo = new JLabel("- Withdraw limit 50%");
+		JLabel trConditionTwo = new JLabel("");
 		trConditionTwo.setForeground(Color.WHITE);
 		trConditionTwo.setFont(new Font("Segoe UI", Font.PLAIN, 10));
 		trConditionTwo.setBounds(12, 42, 288, 17);
 		TransectionCriteriaHolder.add(trConditionTwo);
 		
-		JLabel trConditionThree = new JLabel("- Single cash withdraw limit 20000tk");
+		JLabel trConditionThree = new JLabel("");
 		trConditionThree.setForeground(Color.WHITE);
 		trConditionThree.setFont(new Font("Segoe UI", Font.PLAIN, 10));
 		trConditionThree.setBounds(12, 56, 288, 17);
 		TransectionCriteriaHolder.add(trConditionThree);
 		
-		JLabel trConditionFour = new JLabel("- Single cash withdraw limit 20000tk");
+		JLabel trConditionFour = new JLabel("");
 		trConditionFour.setForeground(Color.WHITE);
 		trConditionFour.setFont(new Font("Segoe UI", Font.PLAIN, 10));
 		trConditionFour.setBounds(12, 70, 288, 17);
 		TransectionCriteriaHolder.add(trConditionFour);
+		
+		
+		if(session.type.equals("0")) {
+			trConditionOne.setText("- Maximum Balance 100000");
+			trConditionTwo.setText("- Transaction Limit 20000");
+			trConditionThree.setText("");
+			trConditionFour.setText("");
+		}
+		else if(session.type.equals("1")) {
+			trConditionOne.setText("- Minimum balance -100000tk");
+			trConditionTwo.setText("- Withdraw limit 50%");
+			trConditionThree.setText("- Single cash withdraw limit 20000tk");
+			trConditionFour.setText("");
+		}
+		else if(session.type.equals("2")) {
+			trConditionOne.setText("");
+			trConditionTwo.setText("");
+			trConditionThree.setText("");
+			trConditionFour.setText("");
+		}
 		
 		JPanel AmountInputBoxContainer = new JPanel();
 		AmountInputBoxContainer.setBackground(Color.WHITE);

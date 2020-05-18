@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Registration extends JFrame {
 
@@ -86,6 +88,20 @@ public class Registration extends JFrame {
 		contentPane.add(LastNameForm);
 		
 		lname = new JTextField();
+		lname.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(lname.getText().equals("Last Name")) {
+					lname.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(lname.getText().trim().equals("")) {
+					lname.setText("Last Name");
+				}
+			}
+		});
 		lname.setText("Last Name");
 		lname.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		lname.setColumns(10);
@@ -100,6 +116,20 @@ public class Registration extends JFrame {
 		FirsNameForm.setLayout(null);
 		
 		fname = new JTextField();
+		fname.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(fname.getText().equals("First Name")) {
+					fname.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(fname.getText().trim().equals("")) {
+					fname.setText("First Name");
+				}
+			}
+		});
 		fname.setText("First Name");
 		fname.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		fname.setBounds(24, 14, 133, 15);
@@ -114,6 +144,20 @@ public class Registration extends JFrame {
 		contentPane.add(EmailForm);
 		
 		email = new JTextField();
+		email.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(email.getText().equals("Email")) {
+					email.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(email.getText().trim().equals("")) {
+					email.setText("Email");
+				}
+			}
+		});
 		email.setText("Email");
 		email.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		email.setColumns(10);
@@ -128,6 +172,20 @@ public class Registration extends JFrame {
 		contentPane.add(PasswordFrom);
 		
 		password = new JTextField();
+		password.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(password.getText().equals("Password")) {
+					password.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(password.getText().trim().equals("")) {
+					password.setText("Password");
+				}
+			}
+		});
 		password.setText("Password");
 		password.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		password.setColumns(10);
@@ -142,6 +200,20 @@ public class Registration extends JFrame {
 		contentPane.add(ConfirmPasswordFrom);
 		
 		cpassword = new JTextField();
+		cpassword.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(cpassword.getText().equals("Confirm Password")) {
+					cpassword.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(cpassword.getText().trim().equals("")) {
+					cpassword.setText("Confirm Password");
+				}
+			}
+		});
 		cpassword.setText("Confirm Password");
 		cpassword.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		cpassword.setColumns(10);
@@ -166,6 +238,20 @@ public class Registration extends JFrame {
 		contentPane.add(PhoneNumberContainer);
 		
 		phone = new JTextField();
+		phone.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(phone.getText().equals("Phone Number")) {
+					phone.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(phone.getText().trim().equals("")) {
+					phone.setText("Phone Number");
+				}
+			}
+		});
 		phone.setText("Phone Number");
 		phone.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		phone.setColumns(10);
@@ -180,6 +266,20 @@ public class Registration extends JFrame {
 		contentPane.add(NIDNumber);
 		
 		nid = new JTextField();
+		nid.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(nid.getText().equals("NID Number")) {
+					nid.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(nid.getText().trim().equals("")) {
+					nid.setText("NID Number");
+				}
+			}
+		});
 		nid.setText("NID Number");
 		nid.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		nid.setColumns(10);
@@ -194,6 +294,20 @@ public class Registration extends JFrame {
 		contentPane.add(AgeForm);
 		
 		age = new JTextField();
+		age.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(age.getText().equals("Age")) {
+					age.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(age.getText().trim().equals("")) {
+					age.setText("Age");
+				}
+			}
+		});
 		age.setText("Age");
 		age.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		age.setColumns(10);
@@ -208,6 +322,20 @@ public class Registration extends JFrame {
 		contentPane.add(FathersNameFrom);
 		
 		father = new JTextField();
+		father.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(father.getText().equals("Father's Name")) {
+					father.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(father.getText().trim().equals("")) {
+					father.setText("Father's Name");
+				}
+			}
+		});
 		father.setText("Father's Name");
 		father.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		father.setColumns(10);
@@ -222,6 +350,20 @@ public class Registration extends JFrame {
 		contentPane.add(MothersNameFrom);
 		
 		mother = new JTextField();
+		mother.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(mother.getText().equals("Mother's Name")) {
+					mother.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(mother.getText().trim().equals("")) {
+					mother.setText("Mother's Name");
+				}
+			}
+		});
 		mother.setText("Mother's Name");
 		mother.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		mother.setColumns(10);
@@ -236,6 +378,20 @@ public class Registration extends JFrame {
 		contentPane.add(AddressFrom);
 		
 		address = new JTextField();
+		address.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(address.getText().equals("Address")) {
+					address.setText("");
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(address.getText().trim().equals("")) {
+					address.setText("Address");
+				}
+			}
+		});
 		address.setText("Address");
 		address.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		address.setColumns(10);

@@ -11,7 +11,6 @@ public class Session {
 	String[] users, values;
 	DatabaseManager dbmanager;
 	public Session() {
-		type = "0";
 		dbmanager = new DatabaseManager();
 //		try {
 //			File reader = new File("users.txt");
@@ -36,7 +35,7 @@ public class Session {
 //			}
 //		}		
 	}
-	public boolean checkAuthentication(String email, String password)
+	public boolean checkAuthentication(String email, String pass)
 	{
 		try {
 			File reader = new File("users.txt");
@@ -68,7 +67,10 @@ public class Session {
 				mother = values[10];
 				address = values[11];
 				amount = Integer.valueOf(values[12]);
-				return true;
+				if(password.equals(pass)) {
+					return true;
+				}
+				return false;
 				
 			}
 			index++;
